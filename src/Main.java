@@ -9,8 +9,8 @@ public class Main {
 
         do {
             System.out.println("-----------------------Menu------------------------");
-            System.out.println("1. Opção 1 - Converte a string para maiúsculas");
-            System.out.println("2. Opção 2 - Inverte a string");
+            System.out.println("1. Opção 1 - Ler uma unica cadeia");
+            System.out.println("2. Opção 2 - Ler arquivo com multiplas cadeias");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção (1, 2 ou 0 para sair): ");
 
