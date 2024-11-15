@@ -38,16 +38,13 @@ public class Main {
             switch (escolha) {
                 case 1:
                     System.out.print("Digite uma cadeia: ");
-                    String input1 = lerStringNaoVazia(scanner);
-                    System.out.println(Misc.stringToQueue(input1));
-                    System.out.println(Misc.queueToString(Misc.stringToQueue(input1)));
-                    //TODO adicionar engine de unica entrada
+                    String op1 = lerStringNaoVazia(scanner);
+                    boolean resultado = Engines.singleInputEntry(op1);
                     break;
                 case 2:
-                    System.out.print("Digite o caminho para o arquivo contendo as cadeias para teste: ");
-                    String input2 = lerStringNaoVazia(scanner);
-                    Engines.multipleInputsEntry(input2);
-                    //TODO adicionar engine de multiplas entradas
+                    System.out.print("Digite o nome do arquivo que deseja validar as cadeias: ");
+                    String op2 = lerStringNaoVazia(scanner);
+                    Engines.multipleInputsEntry(op2);
                     break;
                 case 0:
                     System.out.println("Saindo do programa...");

@@ -31,22 +31,26 @@ public class Misc {
         return queue;
     }
 
-    public static List<Queue<Simbolos.Terminais>> digestFile (String fileName) throws FileNotFoundException {
-        String[] Content = readFile(fileName);
+    public static List<Queue<Simbolos.Terminais>> digestFile(String fileName) throws FileNotFoundException {
+        String[] content = readFile(fileName);
         List<Queue<Simbolos.Terminais>> digestedFile = new ArrayList<>();
-        for (int i = 0; i < Content.length; i++) {
-            digestedFile.add(stringToQueue(Content[i]));
+
+        for (String line : content) {
+            Queue<Simbolos.Terminais> queue = stringToQueue(line);
+            digestedFile.add(queue); 
         }
         return digestedFile;
     }
 
     public static String queueToString(Queue<Simbolos.Terminais> queue) {
-        StringBuilder sb = new StringBuilder();
+        if (queue == null) {
+            return "";
+        }
 
+        StringBuilder sb = new StringBuilder();
         for (Simbolos.Terminais element : queue) {
             sb.append(Simbolos.getStringFromTerminal(element));
         }
-
         return sb.toString();
     }
 
